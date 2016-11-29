@@ -1,0 +1,7 @@
+/*Font including starts */
+@font-face {
+  font-family: "MuseoSans";
+  src: url("../fonts/MuseoSans/MuseoSansCyrl_500.otf");
+  font-style: normal;
+  font-weight: normal;
+}

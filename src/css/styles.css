@@ -1,0 +1,56 @@
+@import "_reset.css";
+@import "_fonts.css";
+
+a,
+input,
+img,
+textarea,
+button {
+  outline: none;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.input-group {
+  &.inline-group {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.svg-container,
+.popup_windows {
+  display: none;
+}
+
+.global_wrapper {
+  font-family: "MuseoSans", sans-serif, Arial;
+  font-weight: normal;
+  font-style: normal;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper-main {
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.container {
+  box-sizing: border-box;
+  lost-utility: clearfix;
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 1170px;
+  width: 100%;
+  &.w-oh {
+    overflow: visible;
+  }
+}
+
+/* End of main styles */
+@import "_media-queries.css";

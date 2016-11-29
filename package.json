@@ -1,0 +1,32 @@
+{
+  "name": "Frontend_drugs",
+  "version": "1.0.0",
+  "description": "Front-end drugs description",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "browser-sync": "^2.11.0",
+    "css-mqpacker": "^5.0.1",
+    "cssnano": "^3.8.1",
+    "gulp": "^3.9.0",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sourcemaps": "^1.5.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp-watch": "^4.1.1",
+    "imagemin-pngquant": "^4.0.0",
+    "lost": "^7.1.1",
+    "postcss-fontpath": "^0.3.0",
+    "postcss-import": "^8.2.0",
+    "postcss-nested": "^1.0.0",
+    "postcss-simple-vars": "^3.0.0",
+    "precss": "^1.4.0"
+  }
+}
