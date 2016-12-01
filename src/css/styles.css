@@ -1,5 +1,5 @@
-@import "_reset.css";
-@import "_fonts.css";
+@import "additional/_reset.css";
+@import "additional/_fonts.css";
 
 a,
 input,
@@ -53,4 +53,4 @@ p {
 }
 
 /* End of main styles */
-@import "_media-queries.css";
+@import "additional/_media-queries.css";

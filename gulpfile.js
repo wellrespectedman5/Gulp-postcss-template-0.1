@@ -8,6 +8,7 @@ var gulp = require('gulp'),
     rigger = require('gulp-rigger'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
+    jshint = require("gulp-jshint"),
     browserSync = require('browser-sync'),
     reload = browserSync.reload;
 
@@ -18,7 +19,8 @@ var postcss = require('gulp-postcss'),
     postcssNested = require('postcss-nested'),
     simpleVars = require('postcss-simple-vars'),
     atImport = require('postcss-import'),
-    lostGrid = require('lost'),
+    lostGrid = require('lost'), 
+    cssUnused = require('postcss-discard-unused'),
     mqpacker = require('css-mqpacker'),
     fontpath = require('postcss-fontpath'),
     preCss = require('precss');
@@ -75,7 +77,8 @@ gulp.task('style:build', function () {
         simpleVars,
         postcssNested,
         atImport,
-        fontpath({checkPath: true}),
+        cssUnused,
+        fontpath({checkPath: false}),
         autoprefixer({browsers: ['last 4 version']}),
         mqpacker,
         cssnano()
@@ -83,13 +86,15 @@ gulp.task('style:build', function () {
     return gulp.src(path.src.style)
         .pipe(postcss(processors))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest(path.build.style));
+        .pipe(gulp.dest(path.build.style))
+        .pipe(reload({stream: true}));
 });
 
 // JS
 gulp.task('js:build', function () {
     gulp.src(path.src.js)
-        .pipe(rigger())
+        .pipe(jshint())
+        .pipe(jshint.reporter('jshint-stylish'))
         .pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.js))
