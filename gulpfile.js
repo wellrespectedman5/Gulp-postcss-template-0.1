@@ -41,7 +41,7 @@ var path = {
     watch: {
         html: './src/html/**/*.html',
         js: './src/js/*.js',
-        style: './src/css/*.css',
+        style: './src/css/**/*.css',
         img: './src/images/**/*.*'
     }
 };
