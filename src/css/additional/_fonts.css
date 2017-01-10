@@ -1,7 +1,11 @@
 /*Font including starts */
 @font-face {
-  font-family: 'MuseoSans';
-  font-path: '../fonts/MuseoSans/MuseoSansCyrl_500';
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Regular.eot");
+  src: url("../fonts/Roboto/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/Roboto/Roboto-Regular.woff") format("woff"),
+  url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype"),
+  url("../fonts/Roboto/Roboto-Regular.ttf") format('svg');
   font-style: normal;
   font-weight: normal;
-}
+}w

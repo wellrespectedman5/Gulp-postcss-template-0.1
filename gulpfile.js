@@ -33,7 +33,7 @@ var path = {
         img: './dist/images'
     },
     src: {
-        html: './src/html/*.html',
+        html: './src/html/**/*.html',
         js: './src/js/*.js',
         style: './src/css/styles.css',
         img: './src/images/**/*.*'
