@@ -1,5 +1,6 @@
 @import "additional/_reset.css";
 @import "additional/_fonts.css";
+@import "additional/_buttons.css";
 
 a,
 input,
@@ -26,7 +27,7 @@ p {
   display: none;
 }
 
-.global_wrapper {
+.global-wrapper {
   font-family: "MuseoSans", sans-serif, Arial;
   font-weight: normal;
   font-style: normal;
@@ -35,7 +36,7 @@ p {
   width: 100%;
 }
 
-.wrapper-main {
+.wrapper {
   overflow: hidden;
   margin: 0 auto;
 }
