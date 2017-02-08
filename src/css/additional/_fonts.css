@@ -5,7 +5,7 @@
   src: url("../fonts/Roboto/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
   url("../fonts/Roboto/Roboto-Regular.woff") format("woff"),
   url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype"),
-  url("../fonts/Roboto/Roboto-Regular.ttf") format('svg');
+  url("../fonts/Roboto/Roboto-Regular.svg") format('svg');
   font-style: normal;
   font-weight: normal;
 }

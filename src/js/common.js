@@ -20,6 +20,6 @@ $(document).ready(function() {
     //        'centerOnScroll': true,
     //        'maxWidth': 800,
     //    });
-    //});
+    //}());
 
 });

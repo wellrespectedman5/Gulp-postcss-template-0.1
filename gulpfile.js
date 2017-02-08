@@ -21,7 +21,6 @@ var postcss = require('gulp-postcss'),
     atImport = require('postcss-import'),
     lostGrid = require('lost'), 
     cssUnused = require('postcss-discard-unused'),
-    mqpacker = require('css-mqpacker'),
     fontpath = require('postcss-fontpath'),
     preCss = require('precss');
 
@@ -80,7 +79,6 @@ gulp.task('style:build', function () {
         cssUnused,
         fontpath({checkPath: false}),
         autoprefixer({browsers: ['last 4 version']}),
-        mqpacker,
         cssnano()
     ];
     return gulp.src(path.src.style)
