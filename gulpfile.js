@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     pngquant = require('imagemin-pngquant'),
     jshint = require("gulp-jshint"),
     browserSync = require('browser-sync'),
+    include = require("gulp-include"),
     reload = browserSync.reload;
 
 //postCSS
@@ -19,7 +20,7 @@ var postcss = require('gulp-postcss'),
     postcssNested = require('postcss-nested'),
     simpleVars = require('postcss-simple-vars'),
     atImport = require('postcss-import'),
-    lostGrid = require('lost'), 
+    lostGrid = require('lost'),
     cssUnused = require('postcss-discard-unused'),
     fontpath = require('postcss-fontpath'),
     preCss = require('precss');
@@ -88,6 +89,35 @@ gulp.task('style:build', function () {
         .pipe(reload({stream: true}));
 });
 
+// CSS bundle
+gulp.task('css-bundle:build', function () {
+    gulp.src('./src/bundles/bundle.css')
+        .pipe(include({
+            extensions: "css",
+            hardFail: true,
+            includePaths: [
+                __dirname + "/dist",
+            ]
+        }))
+        .pipe(gulp.dest('./dist/assets/css'))
+        .pipe(reload({stream: true}));
+});
+
+// JS bundle
+gulp.task('js-bundle:build', function () {
+    gulp.src('./src/bundles/bundle.js')
+        .pipe(include({
+            extensions: "js",
+            hardFail: true,
+            includePaths: [
+                __dirname + "/dist",
+            ]
+        }))
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist/assets/js'))
+        .pipe(reload({stream: true}));
+});
+
 // JS
 gulp.task('js:build', function () {
     gulp.src(path.src.js)
@@ -141,4 +171,4 @@ gulp.task('watch', function () {
     });
 });
 
-gulp.task('default', ['build', 'webserver', 'watch']);
+gulp.task('default', ['js-bundle:build', 'css-bundle:build', 'build', 'webserver', 'watch']);
